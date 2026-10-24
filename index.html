@@ -92,6 +92,9 @@
     .tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;margin-bottom:22px}
     .tag{color:#b8cde0;border:1px solid #3a536a;background:#1b3249;border-radius:7px;padding:4px 8px;font-size:10px;font-weight:650}
     .card-link{display:inline-flex;align-items:center;gap:8px;color:var(--mint);font-size:12px;font-weight:850}
+    .card-link::after{content:"";position:absolute;inset:0;z-index:2;cursor:pointer}
+    .project-card:focus-within{outline:3px solid var(--mint);outline-offset:4px}
+    .detail{scroll-margin-top:95px}
     .chip{position:absolute;right:17px;top:17px;color:#dcf7ec;border:1px solid rgba(145,234,214,.27);background:rgba(15,41,48,.82);backdrop-filter:blur(4px);border-radius:30px;padding:5px 9px;font-size:9px;letter-spacing:.03em;font-weight:800}
     .identity-visual{position:relative;display:flex;align-items:center;gap:12px}
     .identity-circle{width:61px;height:61px;border-radius:18px;border:1px solid #7bc4b8;background:#214b59;display:grid;place-items:center;font-size:30px;color:#aaf1df;box-shadow:0 8px 22px #09222f}
@@ -152,7 +155,7 @@
     .footer{padding:20px 0 34px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;color:#94a8bd;font-size:12px}
     .footer-links{display:flex;gap:23px}
     .fineprint{color:#7991a8;font-size:11px;max-width:800px;margin:16px 0 0}
-    @media(max-width:980px){.hero{gap:30px}.cards{grid-template-columns:repeat(2,1fr)}.project-card:first-child{grid-column:span 2}.project-card:first-child .visual{height:180px}.capabilities{grid-template-columns:repeat(2,1fr)}.detail{gap:25px}.floating{display:none}}
+    @media(max-width:980px){.nav-links{display:none;position:absolute;top:77px;left:0;right:0;padding:20px;background:#101f34;box-shadow:0 20px 30px rgba(0,0,0,.2);border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;gap:19px}.nav-links.open{display:flex}.menu{display:block}.hero{gap:30px}.cards{grid-template-columns:repeat(2,1fr)}.project-card:first-child{grid-column:span 2}.project-card:first-child .visual{height:180px}.capabilities{grid-template-columns:repeat(2,1fr)}.detail{gap:25px}.floating{display:none}}
     @media(max-width:750px){.container{padding:0 20px}.nav{height:67px}.brand small{display:none}.nav-links{display:none;position:absolute;top:67px;left:0;right:0;padding:20px;background:#101f34;box-shadow:0 20px 30px rgba(0,0,0,.2);border-bottom:1px solid var(--border)}.nav-links.open{display:flex;flex-direction:column;align-items:stretch;gap:19px}.menu{display:block}.hero{grid-template-columns:1fr;padding:65px 0 48px}.hero-art{min-height:390px}.center-card{max-width:445px}.art-orbit{width:370px;height:370px}.stats{grid-template-columns:1fr}.stat{padding:16px 19px}.stat:not(:last-child){border-right:0;border-bottom:1px solid var(--border)}.section{padding-top:76px}.cards{grid-template-columns:1fr}.project-card:first-child{grid-column:auto}.project-card{min-height:360px}.detail{grid-template-columns:1fr;gap:20px;margin-top:55px}.detail-right{order:0!important}.contact{padding:31px;display:block;margin:72px 0 49px}.contact h2{font-size:32px}.contact .btn{margin-top:23px}.footer{flex-direction:column;align-items:flex-start}.footer-links{flex-wrap:wrap}}
     @media(max-width:400px){h1{font-size:43px}.flow-visual{grid-template-columns:1fr 14px 1fr 14px 1fr}.flow-block{min-height:90px;padding:7px 4px}.flow-block b{font-size:9px}.center-card{padding:14px}.hero-art{min-height:335px}.art-orbit{display:none}.stat strong{font-size:22px}.sub-panel{grid-template-columns:1fr}.capabilities{grid-template-columns:1fr}.contact{padding:26px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
@@ -165,7 +168,7 @@
       <a class="brand" href="#top" aria-label="Calissa's portfolio home"><span class="brand-mark">C.</span> Calissa <small>/ Project Portfolio</small></a>
       <button class="menu" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button>
       <div class="nav-links" id="nav-links">
-        <a href="#projects">Projects</a><a href="#iam">IAM case study</a><a href="#skills">Skills</a><a href="https://www.linkedin.com/in/calissab/" class="nav-cta" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+        <a href="#projects">All Projects</a><a href="#iam">VetCare IAM</a><a href="#door">Sliding Door</a><a href="#solana">Solana</a><a href="#skills">Skills</a><a href="https://www.linkedin.com/in/calissab/" class="nav-cta" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
       </div>
     </nav>
   </header>
@@ -205,25 +208,26 @@
     </div>
 
     <section class="section container" id="projects" aria-labelledby="projects-title">
-      <div class="section-head"><span class="eyebrow">Selected work</span><h2 id="projects-title">Three different problems.<br>One drive to learn.</h2><p>Each project explores a different layer of technology: who can access a system, how the physical world connects to software, and how digital assets are represented on a blockchain.</p></div>
+      <div class="section-head"><span class="eyebrow">Selected work</span><h2 id="projects-title">Three different problems.<br>One drive to learn.</h2><p>Each project explores a different layer of technology: who can access a system, how the physical world connects to software, and how digital assets are represented on a blockchain. <strong>Select any project card to read its full details below.</strong></p></div>
       <div class="cards">
         <article class="project-card">
           <div class="visual"><div class="identity-visual" aria-hidden="true"><div class="identity-circle">♙</div><div class="identity-line"></div><div class="identity-circle">⬡</div><div class="identity-line"></div><div class="mini-boxes"><span>PetID</span><span>VetEMR</span></div></div><span class="chip">Featured · 2025 IAM case study</span></div>
-          <div class="card-content"><span class="category">Identity & Access Management</span><h3>VetCare — SailPoint IAM</h3><p>One self-directed identity governance project, documented in my Vepy / VetCare ISC Notion workspace. I modeled employee onboarding, transfers, and offboarding through role policies, JSON examples, and Postman test plans.</p><div class="tag-row"><span class="tag">SailPoint ISC</span><span class="tag">JML</span><span class="tag">Postman</span><span class="tag">RBAC</span></div><a class="card-link" href="#iam">Explore case study <span class="arrow">→</span></a></div>
+          <div class="card-content"><span class="category">Identity & Access Management</span><h3>VetCare — SailPoint IAM</h3><p>One self-directed identity governance project, documented in my Vepy / VetCare ISC Notion workspace. I modeled employee onboarding, transfers, and offboarding through role policies, JSON examples, and Postman test plans.</p><div class="tag-row"><span class="tag">SailPoint ISC</span><span class="tag">JML</span><span class="tag">Postman</span><span class="tag">RBAC</span></div><a class="card-link" href="#iam" aria-label="Read VetCare SailPoint IAM project details">View full project <span class="arrow">→</span></a></div>
         </article>
         <article class="project-card">
           <div class="visual"><div class="door-scene" aria-hidden="true"><div class="door-track"></div><div class="door-motor">⌁</div><div class="door-panel"></div></div><span class="chip">Working motor-control prototype · May 2025</span></div>
-          <div class="card-content"><span class="category blue">Embedded Systems & IoT</span><h3>Smart Sliding Glass Door</h3><p>Started in May 2025 to explore an affordable way to let my dog out while I was away. I programmed an ESP32 and got the motor working by remote command, but did not complete the door installation because of concerns about motor strength.</p><div class="tag-row"><span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">Bluetooth</span></div><a class="card-link" href="#door">Explore design <span class="arrow">→</span></a></div>
+          <div class="card-content"><span class="category blue">Embedded Systems & IoT</span><h3>Smart Sliding Glass Door</h3><p>Started in May 2025 to explore an affordable way to let my dog out while I was away. I programmed an ESP32 and got the motor working by remote command, but did not complete the door installation because of concerns about motor strength.</p><div class="tag-row"><span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">Bluetooth</span></div><a class="card-link" href="#door" aria-label="Read ESP32 sliding glass door project details">View full project <span class="arrow">→</span></a></div>
         </article>
         <article class="project-card">
           <div class="visual"><div class="token-art" aria-hidden="true"><div class="token-orbit"></div><div class="token-coin"><span>S</span></div></div><span class="chip">Private experiment</span></div>
-          <div class="card-content"><span class="category purple">Blockchain Exploration</span><h3>Private Solana Token</h3><p>A personal exploration of the Solana token ecosystem, related metadata concepts, and GitHub-based project organization. Sensitive details stay private.</p><div class="tag-row"><span class="tag">Solana</span><span class="tag">Token metadata</span><span class="tag">GitHub</span></div><a class="card-link" href="#solana">Explore project <span class="arrow">→</span></a></div>
+          <div class="card-content"><span class="category purple">Blockchain Exploration</span><h3>Private Solana Token</h3><p>A personal exploration of the Solana token ecosystem, related metadata concepts, and GitHub-based project organization. Sensitive details stay private.</p><div class="tag-row"><span class="tag">Solana</span><span class="tag">Token metadata</span><span class="tag">GitHub</span></div><a class="card-link" href="#solana" aria-label="Read Solana token project details">View full project <span class="arrow">→</span></a></div>
         </article>
       </div>
       <p class="fineprint">Project stages are described conservatively. A prototype design or reconstructed case study is not represented as a production deployment.</p>
     </section>
 
-    <sec      <article class="detail" id="iam">
+    <section class="container" aria-label="Individual project details">
+      <article class="detail" id="iam">
         <div class="detail-left">
           <span class="eyebrow">01 / Featured case study · 2025</span>
           <h3>VetCare | SailPoint ISC Identity Lifecycle Proof of Concept</h3>
@@ -263,10 +267,6 @@
 }</code></pre>
           <div class="sub-panel"><div><strong>Source documentation</strong>Vepy + VetCare ISC (one project)</div><div><strong>Future work</strong>Access reviews · SoD exception queue · Splunk</div></div>
           <p class="panel-caption">WorkTail HR, PetID SSO, and VetEMR are fictional demo systems. The flows and sample payload show the design; they are not proof of executed SailPoint provisioning.</p>
-        </div>
-      </article>
-
-in a production environment.</p>
         </div>
       </article>
 

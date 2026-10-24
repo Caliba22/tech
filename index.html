@@ -124,6 +124,12 @@
     .panel-caption{font-size:11px!important;line-height:1.6!important;color:#8fa8bc!important;margin:16px 0 0}
     .sub-panel{margin-top:20px;border-top:1px solid var(--border);padding-top:19px;display:grid;grid-template-columns:1fr 1fr;gap:13px}
     .sub-panel div{font-size:11px;color:#c6d7e5}.sub-panel strong{display:block;color:#eaf4fd;font-size:13px;margin-bottom:6px}
+    .iam-scenarios{display:grid;gap:10px}
+    .iam-scenario{background:#122c43;border:1px solid #355269;padding:13px 15px;border-radius:11px}
+    .iam-scenario strong{display:block;color:#e9f7ff;font-size:12px;margin-bottom:6px}
+    .iam-scenario span{display:block;color:#b5cbdc;font-size:12px;line-height:1.65}
+    .iam-json{overflow-x:auto;margin:10px 0 0;background:#091b2d;border:1px solid #30516c;border-radius:11px;padding:17px 13px;color:#b5f0e2;line-height:1.7;font-size:12px}
+    .iam-json code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
     .door-system{display:grid;grid-template-columns:1fr;gap:10px}
     .project-video{margin-top:23px;padding-top:19px;border-top:1px solid var(--border)}
     .project-video-title{font-size:12px;font-weight:800;letter-spacing:.03em;color:#edf7ff;margin-bottom:13px}
@@ -202,8 +208,8 @@
       <div class="section-head"><span class="eyebrow">Selected work</span><h2 id="projects-title">Three different problems.<br>One drive to learn.</h2><p>Each project explores a different layer of technology: who can access a system, how the physical world connects to software, and how digital assets are represented on a blockchain.</p></div>
       <div class="cards">
         <article class="project-card">
-          <div class="visual"><div class="identity-visual" aria-hidden="true"><div class="identity-circle">♙</div><div class="identity-line"></div><div class="identity-circle">⬡</div><div class="identity-line"></div><div class="mini-boxes"><span>PetID</span><span>VetEMR</span></div></div><span class="chip">Featured · Documented PoC</span></div>
-          <div class="card-content"><span class="category">Identity & Access Management</span><h3>VetCare / SailPoint ISC</h3><p>A veterinary-themed identity governance proof of concept exploring joiner, mover, and leaver workflows, least-privilege roles, and JSON/Postman API scenarios.</p><div class="tag-row"><span class="tag">SailPoint ISC</span><span class="tag">Postman</span><span class="tag">JSON</span><span class="tag">RBAC</span></div><a class="card-link" href="#iam">Explore case study <span class="arrow">→</span></a></div>
+          <div class="visual"><div class="identity-visual" aria-hidden="true"><div class="identity-circle">♙</div><div class="identity-line"></div><div class="identity-circle">⬡</div><div class="identity-line"></div><div class="mini-boxes"><span>PetID</span><span>VetEMR</span></div></div><span class="chip">Featured · 2025 IAM case study</span></div>
+          <div class="card-content"><span class="category">Identity & Access Management</span><h3>VetCare — SailPoint IAM</h3><p>One self-directed identity governance project, documented in my Vepy / VetCare ISC Notion workspace. I modeled employee onboarding, transfers, and offboarding through role policies, JSON examples, and Postman test plans.</p><div class="tag-row"><span class="tag">SailPoint ISC</span><span class="tag">JML</span><span class="tag">Postman</span><span class="tag">RBAC</span></div><a class="card-link" href="#iam">Explore case study <span class="arrow">→</span></a></div>
         </article>
         <article class="project-card">
           <div class="visual"><div class="door-scene" aria-hidden="true"><div class="door-track"></div><div class="door-motor">⌁</div><div class="door-panel"></div></div><span class="chip">Working motor-control prototype · May 2025</span></div>
@@ -217,18 +223,50 @@
       <p class="fineprint">Project stages are described conservatively. A prototype design or reconstructed case study is not represented as a production deployment.</p>
     </section>
 
-    <section class="section container" aria-label="Project case studies">
-      <article class="detail" id="iam">
-        <div class="detail-left"><span class="eyebrow">01 / Featured case study</span><h3>VetCare Identity Security Cloud</h3><p>I used a veterinary hospital setting to study a central IAM challenge: making sure staff receive the right access as their jobs change—and lose that access when they leave. My self-directed material combines identity lifecycle scenarios, role mappings, JSON/Postman concepts, and Notion documentation.</p>
-          <div class="list-title">What the case study covers</div>
-          <ul class="bullets"><li><span class="check">✓</span><span>Joiner / Mover / Leaver (JML) identity lifecycle scenarios.</span></li><li><span class="check">✓</span><span>Role-based access control (RBAC) and least-privilege permissions.</span></li><li><span class="check">✓</span><span>HR-to-identity-to-application flow using illustrative veterinary systems.</span></li><li><span class="check">✓</span><span>JSON requests, Postman scenarios, and proposed audit events.</span></li></ul>
-          <div class="list-title">Where the work stands</div><p>Documentation and reconstructed demonstration materials exist. The publicly visible SailPoint GitHub repository is currently empty; a live tenant integration, successful provisioning run, and execution logs have not yet been verified. The 15-minute deprovisioning target is a design objective, not a measured result.</p>
-          <div class="source-links"><a href="https://github.com/calisiba/SailPoint-IAM-Postman-Demo" target="_blank" rel="noopener noreferrer">GitHub repo (being rebuilt) ↗</a><a href="https://github.com/calisiba" target="_blank" rel="noopener noreferrer">IAM GitHub profile ↗</a></div>
+    <sec      <article class="detail" id="iam">
+        <div class="detail-left">
+          <span class="eyebrow">01 / Featured case study · 2025</span>
+          <h3>VetCare | SailPoint ISC Identity Lifecycle Proof of Concept</h3>
+          <p>VetCare is a single self-directed IAM learning project originally documented in my <b>Vepy</b> workspace and its <b>VetCare ISC</b> Notion page. I used a fictional veterinary hospital to explore how SailPoint Identity Security Cloud could manage employee access as staff join, change departments, or leave. My documentation covers identity lifecycle scenarios, role mappings, sample JSON requests, and an ordered Postman API test plan.</p>
+          <div class="list-title">Identity lifecycle scenarios</div>
+          <div class="iam-scenarios">
+            <div class="iam-scenario"><strong>01 · Joiner — Luna Shepherd, Veterinary Nurse</strong><span>A new WorkTail HR record leads to a proposed ISC identity, PetID SSO access, a VetEMR Surgery Nurse role, and auditable provisioning events.</span></div>
+            <div class="iam-scenario"><strong>02 · Mover — Toby Retriever, ER → Surgery</strong><span>A department/job-code change prompts a PATCH request, removal of ER Tech access, granting Surgery Tech access, and policy review to avoid accumulated privileges.</span></div>
+            <div class="iam-scenario"><strong>03 · Leaver — Luna Shepherd</strong><span>A terminated lifecycle state triggers a proposed PetID SSO disable, VetEMR entitlement revocation, and SIEM deprovisioning event.</span></div>
+          </div>
+          <div class="list-title">Skills and design decisions</div>
+          <ul class="bullets">
+            <li><span class="check">✓</span><span>Joiner / Mover / Leaver (JML) workflows, RBAC, and least-privilege access.</span></li>
+            <li><span class="check">✓</span><span>Separation-of-duties (SoD) checks and removing old access during role changes.</span></li>
+            <li><span class="check">✓</span><span>JSON and REST/PATCH request examples with planned Postman test sequences.</span></li>
+            <li><span class="check">✓</span><span>Audit logging concepts and a <b>15-minute leaver access-disable target</b> (design goal, not measured performance).</span></li>
+          </ul>
+          <div class="list-title">Project status and evidence</div>
+          <p>My Vepy and VetCare ISC notes from August–September 2025 include diagrams, role-and-permission graphics, test-step descriptions, and illustrative JSON payloads. They reference a Postman collection named <code>VetCare_ISC_Postman_Collection_v2.json</code>, but the original collection file, execution results, and any live SailPoint tenant integration are still being recovered or verified. This is a documented proof of concept, not a production deployment.</p>
+          <div class="list-title">Planned next improvements</div>
+          <p>Recover and reproduce the API test collection, capture verifiable request/response evidence, add access certifications and SoD exception handling, and explore Splunk audit dashboards.</p>
+          <div class="source-links"><a href="https://github.com/calisiba/SailPoint-IAM-Postman-Demo" target="_blank" rel="noopener noreferrer">GitHub repo (recovery in progress) ↗</a><a href="https://github.com/calisiba" target="_blank" rel="noopener noreferrer">IAM GitHub profile ↗</a></div>
         </div>
-        <div class="detail-right"><div class="panel-overline"><span>Illustrative architecture</span><span>JML model</span></div>
-          <div class="flow-rows"><div class="flow-row"><span class="step-label">01 · SOURCE</span><span>WorkTail HR / personnel record</span></div><div class="flow-row"><span class="step-label">02 · DECIDE</span><span>Identity Security Cloud / role policy</span></div><div class="flow-row"><span class="step-label">03 · TARGET</span><span>PetID SSO / VetEMR applications</span></div><div class="flow-row"><span class="step-label">04 · AUDIT</span><span>SIEM event / review trail concept</span></div></div>
-          <div class="sub-panel"><div><strong>Example identities</strong>Luna Shepherd · Toby Retriever</div><div><strong>Next areas</strong>Access reviews · SoD · Splunk dashboards</div></div>
-          <p class="panel-caption">This diagram communicates the proposed architecture. It does not assert that these systems were connected in a production environment.</p>
+        <div class="detail-right">
+          <div class="panel-overline"><span>VetCare IAM model</span><span>Conceptual architecture</span></div>
+          <div class="flow-rows">
+            <div class="flow-row"><span class="step-label">01 · SOURCE</span><span>WorkTail HR / personnel attributes</span></div>
+            <div class="flow-row"><span class="step-label">02 · DECIDE</span><span>SailPoint ISC / identity lifecycle + RBAC + SoD</span></div>
+            <div class="flow-row"><span class="step-label">03 · TARGET</span><span>PetID SSO / VetEMR role entitlements</span></div>
+            <div class="flow-row"><span class="step-label">04 · AUDIT</span><span>Proposed SIEM event / review trail</span></div>
+          </div>
+          <div class="list-title">Example Mover JSON · illustrative</div>
+          <pre class="iam-json"><code>{
+  "department": "Surgery",
+  "jobCode": "VetTech2",
+  "effectiveDate": "2025-10-01"
+}</code></pre>
+          <div class="sub-panel"><div><strong>Source documentation</strong>Vepy + VetCare ISC (one project)</div><div><strong>Future work</strong>Access reviews · SoD exception queue · Splunk</div></div>
+          <p class="panel-caption">WorkTail HR, PetID SSO, and VetEMR are fictional demo systems. The flows and sample payload show the design; they are not proof of executed SailPoint provisioning.</p>
+        </div>
+      </article>
+
+in a production environment.</p>
         </div>
       </article>
 
